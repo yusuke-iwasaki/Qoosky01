@@ -1,0 +1,12 @@
+<form id="myContainer" method="post" action="/checkout">
+<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
+</form>
+<script>
+window.paypalCheckoutReady = function() {
+    paypal.checkout.setup('Merchant-ID', {
+        environment: 'sandbox',
+        container: 'myContainer'
+    });
+};
+</script>
+<script src="//www.paypalobjects.com/api/checkout.js" async></script>
